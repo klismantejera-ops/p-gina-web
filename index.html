@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Tecnología Futurista Interactiva</title>
+<title>Tecnología Futurista Interactiva - Estilo Tron</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
   body {
     margin: 0;
     font-family: 'Orbitron', sans-serif;
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-    color: #00ffea;
+    background: radial-gradient(circle at center, #00171f, #00060f 80%);
+    color: #00f0ff;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -25,9 +25,9 @@
     grid-gap: 25px;
   }
   .card {
-    background: rgba(10,10,30,0.9);
+    background: rgba(0, 23, 38, 0.85);
     border-radius: 15px;
-    box-shadow: 0 0 25px #00ffea88;
+    box-shadow: 0 0 25px #00f0ff88;
     cursor: pointer;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -37,20 +37,20 @@
     padding: 15px 15px 25px;
   }
   .card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 40px #00fffaa0;
+    transform: scale(1.07);
+    box-shadow: 0 0 45px #00f0fff0;
   }
   .card img {
     max-width: 120px;
-    filter: drop-shadow(0 0 4px #00ffeaaa);
+    filter: drop-shadow(0 0 5px #00f0ffcc);
     margin-bottom: 15px;
     user-select: none;
     pointer-events: none;
   }
   .card h3 {
     margin: 0 0 10px;
-    color: #00ffc8;
-    text-shadow: 0 0 10px #00ffea;
+    color: #00b9ff;
+    text-shadow: 0 0 15px #00b9ff;
     letter-spacing: 1.2px;
     user-select: none;
   }
@@ -59,6 +59,7 @@
     line-height: 1.3;
     user-select: none;
     text-align: center;
+    color: #a0e9ff;
   }
   @media (max-width: 480px) {
     .container {
@@ -74,116 +75,180 @@
   }
   /* Modal styles */
   #modal {
-    display: none;
+    display: flex;
     position: fixed;
     z-index: 1000;
-    backdrop-filter: blur(7px);
-    background: rgba(15, 20, 30, 0.9);
-    left: 0; top: 0; right: 0; bottom: 0;
-    align-items: center;
     justify-content: center;
-    padding: 20px;
+    align-items: center;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background: rgba(0, 7, 15, 0.9);
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.95);
+    transition: opacity 0.35s ease, transform 0.35s ease;
   }
   #modal.active {
-    display: flex;
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
   }
   #modal-content {
-    background: #011627;
+    background: #002732;
     border-radius: 20px;
     max-width: 600px;
-    width: 100%;
-    padding: 30px;
-    color: #00ffea;
-    box-shadow: 0 0 40px #00ffea;
+    width: 90%;
+    padding: 30px 40px;
+    color: #00f0ff;
+    box-shadow: 0 0 45px #00b9ff;
     position: relative;
+    font-weight: 500;
   }
   #modal-close {
     position: absolute;
     top: 15px;
     right: 20px;
-    font-size: 1.8rem;
+    font-size: 2.2rem;
     font-weight: bold;
+    color: #00b9ff;
     cursor: pointer;
     user-select: none;
-    color: #00ffea;
+    transition: color 0.3s ease;
+  }
+  #modal-close:hover {
+    color: #00f0ff;
   }
   #modal h2 {
     margin-top: 0;
-    letter-spacing: 1.5px;
+    letter-spacing: 2px;
     text-align: center;
-    text-shadow: 0 0 15px #00ffea;
+    text-shadow: 0 0 20px #00f0ff;
+    font-weight: 700;
   }
-  #modal p {
+  #modal ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 20px;
+  }
+  #modal ul li {
+    margin-bottom: 15px;
     font-size: 1rem;
     line-height: 1.4;
-    margin-top: 15px;
+  }
+  #modal ul li h3 {
+    margin: 0 0 5px;
+    color: #00bfff;
+    font-weight: 600;
   }
 </style>
 </head>
 <body>
   <main class="container" role="main" aria-label="Información interactiva sobre tecnología">
-    <article class="card" tabindex="0" data-title="Tecnología y su Uso" data-detail="La tecnología engloba conocimientos, técnicas y procesos para crear herramientas y sistemas que mejoran la vida, optimizan el trabajo y permiten el desarrollo en áreas como comunicación, industria, educación y entretenimiento.">
-      <img src="https://img.icons8.com/ios-filled/100/00ffea/technology.png" alt="Icono de Tecnología"/>
+    <article class="card" tabindex="0" data-title="Tecnología y su Uso" data-detail='[
+      {"title": "Definición", "content": "La tecnología engloba conocimientos, técnicas y procesos para crear herramientas que mejoran la vida."},
+      {"title": "Aplicaciones", "content": "Se utiliza en comunicación, educación, industria, medicina y entretenimiento, entre otros."},
+      {"title": "Impacto", "content": "Permite optimizar tareas, innovar procesos y facilita el acceso a la información global."}
+      ]'>
+      <img src="https://img.icons8.com/ios-filled/100/00f0ff/technology.png" alt="Icono de Tecnología"/>
       <h3>Tecnología y su Uso</h3>
       <p>Conceptos básicos y aplicaciones generales.</p>
     </article>
 
-    <article class="card" tabindex="0" data-title="Procesador (CPU)" data-detail="El procesador ejecuta instrucciones y procesa datos, funcionando como el cerebro central del computador.">
-      <img src="https://img.icons8.com/ios-filled/100/00ffea/processor.png" alt="Icono de Procesador"/>
+    <article class="card" tabindex="0" data-title="Procesador (CPU)" data-detail='[
+      {"title": "Función", "content": "Ejecuta instrucciones y procesa datos; es el cerebro del computador."},
+      {"title": "Componentes", "content": "Contiene núcleos, caché y unidad de control."},
+      {"title": "Importancia", "content": "Determina la velocidad y capacidad de procesamiento."}
+      ]'>
+      <img src="https://img.icons8.com/ios-filled/100/00f0ff/processor.png" alt="Icono de Procesador"/>
       <h3>Procesador (CPU)</h3>
       <p>El cerebro del computador.</p>
     </article>
 
-    <article class="card" tabindex="0" data-title="Memoria RAM" data-detail="Memoria temporal que guarda datos e instrucciones necesarios para el procesamiento inmediato por la CPU.">
-      <img src="https://img.icons8.com/ios-filled/100/00ffea/ram-memory-slot.png" alt="Icono de Memoria RAM"/>
+    <article class="card" tabindex="0" data-title="Memoria RAM" data-detail='[
+      {"title": "Definición", "content": "Memoria temporal para almacenar datos e instrucciones en uso."},
+      {"title": "Función", "content": "Permite acceso rápido a la CPU para ejecutar programas."},
+      {"title": "Tipos", "content": "DDR3, DDR4 y DDR5 son algunos tipos comunes de RAM."}
+      ]'>
+      <img src="https://img.icons8.com/ios-filled/100/00f0ff/ram-memory-slot.png" alt="Icono de Memoria RAM"/>
       <h3>Memoria RAM</h3>
       <p>Datos para procesamiento en tiempo real.</p>
     </article>
 
-    <article class="card" tabindex="0" data-title="Disco Duro" data-detail="Dispositivo permanente de almacenamiento donde se guardan datos, programas y sistema operativo.">
-      <img src="https://img.icons8.com/ios-filled/100/00ffea/hard-disk-drive.png" alt="Icono de Disco Duro"/>
+    <article class="card" tabindex="0" data-title="Disco Duro" data-detail='[
+      {"title": "Función", "content": "Almacenamiento permanente de datos y sistema operativo."},
+      {"title": "Tipos", "content": "HDD tradicional y SSD de estado sólido."},
+      {"title": "Velocidad", "content": "Los SSD son mucho más rápidos que los HDD."}
+      ]'>
+      <img src="https://img.icons8.com/ios-filled/100/00f0ff/hard-disk-drive.png" alt="Icono de Disco Duro"/>
       <h3>Disco Duro</h3>
       <p>Almacenamiento permanente.</p>
     </article>
 
-    <article class="card" tabindex="0" data-title="Placa Base (Motherboard)" data-detail="Placa que conecta y permite la comunicación entre todos los componentes del computador para que funcionen juntos correctamente.">
-      <img src="https://img.icons8.com/ios-filled/100/00ffea/motherboard.png" alt="Icono de Placa Base"/>
+    <article class="card" tabindex="0" data-title="Placa Base (Motherboard)" data-detail='[
+      {"title": "Función", "content": "Conecta todos los componentes y permite su comunicación."},
+      {"title": "Slots", "content": "Para CPU, RAM, tarjetas de expansión y otros dispositivos."},
+      {"title": "Chipset", "content": "Controla el flujo de datos entre los componentes."}
+      ]'>
+      <img src="https://img.icons8.com/ios-filled/100/00f0ff/motherboard.png" alt="Icono de Placa Base"/>
       <h3>Placa Base (Motherboard)</h3>
       <p>Conexión central de componentes.</p>
     </article>
 
-    <article class="card" tabindex="0" data-title="Tarjeta Gráfica" data-detail="Procesa las imágenes y señales visuales para enviar al monitor, facilitando la visualización de gráficos, videos y juegos.">
-      <img src="https://img.icons8.com/ios-filled/100/00ffea/video-card.png" alt="Icono de Tarjeta Gráfica"/>
+    <article class="card" tabindex="0" data-title="Tarjeta Gráfica" data-detail='[
+      {"title": "Función", "content": "Procesa imágenes y señales visuales para el monitor."},
+      {"title": "Tipos", "content": "Integradas y dedicadas para videojuegos y diseño."},
+      {"title": "Importancia", "content": "Clave en renderizado gráfico y realidad virtual."}
+      ]'>
+      <img src="https://img.icons8.com/ios-filled/100/00f0ff/video-card.png" alt="Icono de Tarjeta Gráfica"/>
       <h3>Tarjeta Gráfica</h3>
       <p>Procesamiento de imágenes y video.</p>
     </article>
 
-    <article class="card" tabindex="0" data-title="Sistema Operativo" data-detail="Software que administra los recursos del hardware y ofrece servicios básicos a los demás programas para realizar tareas cotidianas.">
-      <img src="https://img.icons8.com/ios-filled/100/00ffea/operating-system.png" alt="Icono de Sistema Operativo"/>
+    <article class="card" tabindex="0" data-title="Sistema Operativo" data-detail='[
+      {"title": "Definición", "content": "Software que administra recursos de hardware y software."},
+      {"title": "Ejemplos", "content": "Windows, Linux, macOS, Android."},
+      {"title": "Funciones", "content": "Gestión de procesos, memoria y dispositivos."}
+      ]'>
+      <img src="https://img.icons8.com/ios-filled/100/00f0ff/operating-system.png" alt="Icono de Sistema Operativo"/>
       <h3>Sistema Operativo</h3>
       <p>Gestión y coordinación del hardware.</p>
     </article>
 
-    <article class="card" tabindex="0" data-title="Software de Aplicación" data-detail="Programas diseñados para realizar tareas específicas, tales como procesadores de texto, navegadores o videojuegos.">
-      <img src="https://img.icons8.com/ios-filled/100/00ffea/application-window.png" alt="Icono de Software de Aplicación"/>
+    <article class="card" tabindex="0" data-title="Software de Aplicación" data-detail='[
+      {"title": "Definición", "content": "Programas para tareas específicas."},
+      {"title": "Ejemplos", "content": "Navegadores, procesadores de texto, juegos."},
+      {"title": "Importancia", "content": "Facilitan la productividad y entretenimiento."}
+      ]'>
+      <img src="https://img.icons8.com/ios-filled/100/00f0ff/application-window.png" alt="Icono de Software de Aplicación"/>
       <h3>Software de Aplicación</h3>
       <p>Herramientas para tareas específicas.</p>
     </article>
 
-    <article class="card" tabindex="0" data-title="Tarjeta de Red" data-detail="Componente que conecta el computador a redes cableadas o inalámbricas para comunicarse con otros dispositivos e Internet.">
-      <img src="https://img.icons8.com/ios-filled/100/00ffea/network-card.png" alt="Icono de Tarjeta de Red"/>
+    <article class="card" tabindex="0" data-title="Tarjeta de Red" data-detail='[
+      {"title": "Función", "content": "Conectar computador a redes cableadas o inalámbricas."},
+      {"title": "Tipos", "content": "Ethernet, Wi-Fi, Bluetooth."},
+      {"title": "Uso", "content": "Comunicación con dispositivos e Internet."}
+      ]'>
+      <img src="https://img.icons8.com/ios-filled/100/00f0ff/network-card.png" alt="Icono de Tarjeta de Red"/>
       <h3>Tarjeta de Red</h3>
       <p>Conexión a redes y comunicación.</p>
     </article>
 
-    <article class="card" tabindex="0" data-title="Fuente de Poder" data-detail="Provee energía eléctrica estable y adecuada para el funcionamiento de todos los componentes del computador.">
-      <img src="https://img.icons8.com/ios-filled/100/00ffea/power-supply.png" alt="Icono de Fuente de Poder"/>
+    <article class="card" tabindex="0" data-title="Fuente de Poder" data-detail='[
+      {"title": "Función", "content": "Proveer energía eléctrica estable al computador."},
+      {"title": "Características", "content": "Convierte corriente alterna en continua."},
+      {"title": "Importancia", "content": "Garantiza funcionamiento seguro y estable."}
+      ]'>
+      <img src="https://img.icons8.com/ios-filled/100/00f0ff/power-supply.png" alt="Icono de Fuente de Poder"/>
       <h3>Fuente de Poder</h3>
       <p>Suministro eléctrico estable.</p>
     </article>
 
-    <article class="card" tabindex="0" data-title="Periféricos" data-detail="Dispositivos externos como teclado, ratón, monitor e impresora que permiten la interacción y ampliación de funciones del computador.">
-      <img src="https://img.icons8.com/ios-filled/100/00ffea/peripheral.png" alt="Icono de Periféricos"/>
+    <article class="card" tabindex="0" data-title="Periféricos" data-detail='[
+      {"title": "Definición", "content": "Dispositivos externos para interacción y expansión."},
+      {"title": "Ejemplos", "content": "Teclado, ratón, impresora, monitor."},
+      {"title": "Función", "content": "Facilitan el uso y mejoran la experiencia del usuario."}
+      ]'>
+      <img src="https://img.icons8.com/ios-filled/100/00f0ff/peripheral.png" alt="Icono de Periféricos"/>
       <h3>Periféricos</h3>
       <p>Interacción y ampliación funcional.</p>
     </article>
@@ -193,7 +258,7 @@
     <div id="modal-content">
       <span id="modal-close" role="button" aria-label="Cerrar ventana">&times;</span>
       <h2 id="modal-title"></h2>
-      <p id="modal-desc"></p>
+      <ul id="modal-desc"></ul>
     </div>
   </div>
 
@@ -207,7 +272,20 @@
   cards.forEach(card => {
     card.addEventListener('click', () => {
       modalTitle.textContent = card.dataset.title;
-      modalDesc.textContent = card.dataset.detail;
+      const details = JSON.parse(card.dataset.detail);
+      modalDesc.innerHTML = ''; // limpiar
+
+      details.forEach(item => {
+        const li = document.createElement('li');
+        const h3 = document.createElement('h3');
+        h3.textContent = item.title;
+        const p = document.createElement('p');
+        p.textContent = item.content;
+        li.appendChild(h3);
+        li.appendChild(p);
+        modalDesc.appendChild(li);
+      });
+
       modal.classList.add('active');
       modalClose.focus();
     });
@@ -239,4 +317,3 @@
 </script>
 </body>
 </html>
-
