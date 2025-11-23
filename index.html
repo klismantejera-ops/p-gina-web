@@ -3,157 +3,183 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Tecnología Futurista Avanzada - Bienvenida, sonido y más</title>
+<title>Tecnología Avanzada Futurista - Proyecto KLISMAN</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=ADLaM+Display&display=swap');
+
   body {
-    margin:0;
+    margin: 0;
     font-family: 'Orbitron', sans-serif;
-    background: radial-gradient(circle at center, #001622, #00305a 85%);
-    color: #00e5ff;
-    display:flex;
+    background: linear-gradient(135deg, #021122, #042c54 95%);
+    color: #a5cdfc;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    min-height:100vh;
-    padding: 25px 12px 60px;
+    min-height: 100vh;
+    padding: 20px 15px 100px;
   }
+
   header {
     max-width: 900px;
     width: 100%;
     margin-bottom: 25px;
-    text-align: center;
     padding: 25px 20px;
-    background: rgba(0, 48, 92, 0.9);
-    border: 2px solid #00d1ff;
+    background: rgba(0, 46, 82, 0.85);
+    border: 2px solid #69b3ff;
     border-radius: 20px;
-    box-shadow: 0 0 35px #00e5ffcc;
+    box-shadow: 0 0 40px #4da3ffaa;
+    text-align: center;
   }
+
   header h1 {
-    font-size: 2.6rem;
-    margin-bottom: 0.3em;
-    color: #00dfff;
-    text-shadow: 0 0 40px #00e5ffbb;
+    font-size: 2.8rem;
+    margin-bottom: 0.5em;
+    color: #7ec8ff;
+    text-shadow: 0 0 50px #7ec8ffcc;
     letter-spacing: 3px;
   }
+
   header p {
-    font-size: 1.2rem;
-    max-width: 600px;
+    font-size: 1.25rem;
+    max-width: 650px;
     margin: 0 auto;
-    line-height: 1.5;
-    color: #b3faffcc;
+    line-height: 1.6;
+    color: #a7d3ffcc;
   }
+
+  header span.bold-adlam {
+    font-weight: 900;
+    font-family: 'ADLaM Display', monospace;
+    font-size: 36px;
+    display: block;
+    margin-top: 16px;
+    color: #90c2ffdd;
+    text-shadow: 0 0 40px #90c2ffbb;
+  }
+
   #searchInput {
-    margin: 25px auto 20px;
-    max-width: 500px;
+    margin: 20px auto 25px;
+    max-width: 560px;
     width: 90%;
-    font-size: 1rem;
-    padding: 11px 18px;
-    border-radius: 25px;
-    border: 2px solid #00c7ff;
-    background: rgba(0,40,77,0.7);
-    color: #a7ecff;
-    box-shadow: inset 0 0 15px #00b6ffcc;
+    font-size: 1.1rem;
+    padding: 12px 20px;
+    border-radius: 28px;
+    border: 2.5px solid #85b9fc;
+    background: rgba(2, 22, 45, 0.9);
+    color: #c0dbff;
+    box-shadow: inset 0 0 18px #5da6ffbb;
     outline: none;
-    transition: 0.3s all;
+    transition: 0.3s all ease;
   }
+
   #searchInput:focus {
-    border-color: #00f5ff;
-    box-shadow: inset 0 0 25px #00f5ffbb;
+    border-color: #9ec9ff;
+    box-shadow: inset 0 0 32px #83b1ffdd;
   }
+
   .filters {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 14px;
+    gap: 15px;
     max-width: 900px;
-    margin-bottom: 32px;
+    margin-bottom: 36px;
   }
+
   .filter-btn {
     background: transparent;
-    border: 2.5px solid #00baff;
-    padding: 9px 20px;
-    border-radius: 18px;
-    font-size: 1rem;
-    font-weight: 700;
-    letter-spacing: 1.4px;
-    color: #00baff;
+    border: 3px solid #80b6ff;
+    padding: 10px 24px;
+    border-radius: 24px;
+    font-size: 1.04rem;
+    font-weight: 800;
+    letter-spacing: 1.7px;
+    color: #82aaff;
     cursor: pointer;
     transition: all 0.35s ease;
     user-select: none;
-    mix-blend-mode: screen;
   }
-  .filter-btn.active, .filter-btn:hover {
-    background: #00e5ff;
-    color: #00304b;
-    box-shadow: 0 0 55px #00e5ffcc;
-    text-shadow: none;
+
+  .filter-btn:hover,
+  .filter-btn.active {
+    background: #a3c1ff;
+    color: #093459;
+    box-shadow: 0 0 45px #a3c1ffa0;
   }
+
   .container {
-    max-width: 1400px;
+    max-width: 1420px;
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
-    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 26px;
   }
+
   .card {
-    background: rgba(0, 30, 60, 0.75);
-    border: 2.5px solid #00e5ff;
+    background: rgba(4, 40, 78, 0.86);
+    border: 3px solid #85b7ffcc;
     border-radius: 22px;
     box-shadow:
-      0 0 30px #00dfffbb,
-      inset 0 0 20px #00b9ffcc;
+      0 0 30px #8abaffbb,
+      inset 0 0 25px #75a9ffcc;
     cursor: pointer;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 24px 20px 30px;
-    transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.4s ease;
+    padding: 28px 22px 34px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.4s ease;
     user-select: none;
     position: relative;
   }
+
   .card:hover {
-    transform: scale(1.13);
+    transform: scale(1.14);
     box-shadow:
-      0 0 90px #00ffffee,
-      inset 0 0 45px #00ccffff,
-      inset 0 0 60px #00e5ffff;
-    border-color: #00e5ff;
+      0 0 110px #91beffff,
+      inset 0 0 45px #5db7f7ee,
+      inset 0 0 60px #95ccffff;
+    border-color: #a8deff;
     z-index: 5;
   }
+
   .card svg {
-    width: 84px;
-    height: 84px;
-    margin-bottom: 16px;
-    filter: drop-shadow(0 0 8px #00ebffcc);
+    width: 90px;
+    height: 90px;
+    margin-bottom: 18px;
+    filter: drop-shadow(0 0 9px #71baffcc);
     pointer-events: none;
-    user-select:none;
+    user-select: none;
   }
+
   .card h3 {
-    margin: 0 0 10px;
-    color: #00d9ff;
-    text-shadow: 0 0 20px #00e1ffbb;
-    letter-spacing: 1.5px;
+    margin: 0 0 14px;
+    color: #a1ceff;
+    text-shadow: 0 0 30px #95c6ffbb;
+    letter-spacing: 1.6px;
   }
+
   .card p {
-    font-size: 0.95rem;
-    line-height: 1.48;
-    color: #94e7ffaa;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #a6cbffcc;
     text-align: center;
   }
+
   @media (max-width: 480px) {
     .container {
       grid-template-columns: 1fr;
     }
     .card {
-      padding: 20px 18px 28px;
+      padding: 22px 18px 30px;
     }
     .card svg {
-      width: 60px;
-      height: 60px;
-      margin-bottom: 12px;
+      width: 70px;
+      height: 70px;
+      margin-bottom: 15px;
     }
   }
+
   #modal {
     transition: opacity 0.35s ease, transform 0.35s ease;
     display: flex;
@@ -161,173 +187,171 @@
     z-index: 9999;
     justify-content: center;
     align-items: center;
-    top: 0; right: 0; bottom: 0; left: 0;
-    background: rgba(0, 10, 15, 0.97);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 14, 38, 0.97);
     opacity: 0;
     pointer-events: none;
     transform: scale(0.95);
   }
+
   #modal.active {
     opacity: 1;
     pointer-events: auto;
     transform: scale(1);
   }
+
   #modal-content {
-    background: #002544;
+    background: #002b53;
     border-radius: 26px;
-    max-width: 720px;
+    max-width: 760px;
     width: 95%;
-    padding: 42px 56px;
-    color: #00ffff;
+    padding: 44px 52px;
+    color: #a6e2ff;
     box-shadow:
-      0 0 110px #00cfff,
-      0 0 140px #00e7ff;
+      0 0 130px #7ec2ff,
+      0 0 160px #6aaeff;
     position: relative;
     font-weight: 500;
     user-select: text;
     max-height: 80vh;
     overflow-y: auto;
   }
+
   #modal-close {
     position: absolute;
-    top: 12px;
-    right: 24px;
-    font-size: 3rem;
+    top: 14px;
+    right: 28px;
+    font-size: 3.2rem;
     font-weight: 700;
-    color: #00bfff;
+    color: #56a6ffbb;
     cursor: pointer;
     user-select: none;
-    transition: color 0.3s ease;
+    transition: color 0.35s ease;
   }
+
   #modal-close:hover {
-    color: #00ffff;
+    color: #a5dcff;
   }
+
   #modal h2 {
     margin-top: 0;
-    letter-spacing: 4px;
+    letter-spacing: 4.5px;
     text-align: center;
-    text-shadow: 0 0 28px #00ffff;
+    text-shadow: 0 0 32px #9ee0ffcf;
     font-weight: 800;
   }
+
   #modal ul {
     list-style: none;
     padding-left: 0;
-    margin-top: 26px;
+    margin-top: 30px;
   }
+
   #modal ul li {
-    margin-bottom: 20px;
-    font-size: 1.15rem;
+    margin-bottom: 22px;
+    font-size: 1.18rem;
     line-height: 1.6;
   }
+
   #modal ul li h3 {
-    margin: 0 0 8px;
-    color: #00bfff;
+    margin: 0 0 10px;
+    color: #89cbff;
     font-weight: 700;
   }
+
   #sound-toggle {
     position: fixed;
-    bottom: 34px;
-    right: 36px;
+    bottom: 36px;
+    right: 42px;
     background: transparent;
-    border: 2.5px solid #00e5ff;
+    border: 2.5px solid #00d8ff;
     border-radius: 50%;
-    width: 58px;
-    height: 58px;
+    width: 60px;
+    height: 60px;
     cursor: pointer;
-    box-shadow: 0 0 26px #00e5ffbb;
-    transition: background-color 0.3s, border-color 0.3s;
+    box-shadow: 0 0 28px #00d8ffbb;
+    transition: background-color 0.35s, border-color 0.35s;
     z-index: 10000;
     display: flex;
     justify-content: center;
     align-items: center;
   }
+
   #sound-toggle:hover {
-    background-color: #00e5ff33;
-    border-color: #00e5ff;
+    background-color: #00d8ff33;
+    border-color: #00d8ff;
   }
+
   #sound-toggle svg {
-    fill: #00e5ff;
-    width: 30px;
-    height: 30px;
+    fill: #00d8ff;
+    width: 32px;
+    height: 32px;
   }
+
   #sound-toggle.active svg {
-    fill: #001a2e;
+    fill: #001d36;
   }
 </style>
 </head>
 <body>
 <header>
-  <h1>Bienvenido a la Tecnología Futurista</h1>
-  <p>Explora una amplia gama de tecnologías, desde lo básico hasta lo más avanzado, con información clara y visualmente impactante. ¡Haz clic en cualquier recuadro para aprender más!</p>
-  <input type="search" id="searchInput" aria-label="Buscar tarjetas" placeholder="Buscar tecnología..." />
-  <div class="filters" role="group" aria-label="Filtros de categorías">
-    <button class="filter-btn active" data-filter="all" aria-pressed="true">Todas</button>
-    <button class="filter-btn" data-filter="basico" aria-pressed="false">Básico</button>
-    <button class="filter-btn" data-filter="avanzado" aria-pressed="false">Avanzado</button>
-    <button class="filter-btn" data-filter="redes" aria-pressed="false">Redes</button>
-    <button class="filter-btn" data-filter="software" aria-pressed="false">Software</button>
-    <button class="filter-btn" data-filter="hardware" aria-pressed="false">Hardware</button>
-    <button class="filter-btn" data-filter="seguridad" aria-pressed="false">Seguridad</button>
+  <h1>[translate:Bienvenido a la Tecnología Futurista Interactiva]</h1>
+  <p>[translate:Explora conceptos avanzados y básicos para entender mejor el mundo tecnológico que nos rodea. ¡Haz clic en cualquier recuadro y aprende!]</p>
+  <span class="bold-adlam" lang="en">KLISMAN ANDRES TEJERA GARRIDO - Código estudiantil 2025164031</span>
+  <input type="search" id="searchInput" aria-label="[translate:Buscar tarjetas]" placeholder="[translate:Buscar tecnología...]" />
+  <div class="filters" role="group" aria-label="[translate:Filtros de categorías]">
+    <button class="filter-btn active" data-filter="all" aria-pressed="true">[translate:Todas]</button>
+    <button class="filter-btn" data-filter="basico" aria-pressed="false">[translate:Básico]</button>
+    <button class="filter-btn" data-filter="avanzado" aria-pressed="false">[translate:Avanzado]</button>
+    <button class="filter-btn" data-filter="redes" aria-pressed="false">[translate:Redes]</button>
+    <button class="filter-btn" data-filter="software" aria-pressed="false">[translate:Software]</button>
+    <button class="filter-btn" data-filter="hardware" aria-pressed="false">[translate:Hardware]</button>
+    <button class="filter-btn" data-filter="seguridad" aria-pressed="false">[translate:Seguridad]</button>
   </div>
 </header>
-<main class="container" role="main" aria-label="Información interactiva sobre tecnología">
-  <!-- Ejemplos exagerados: añade tantas tarjetas como quieras -->
-  <article tabindex="0" class="card" data-category="basico hardware" data-title="Procesador (CPU)" data-detail='[
-    {"title":"Función","content":"Ejecuta instrucciones y procesa datos; es el cerebro del computador."},
-    {"title":"Componentes","content":"Contiene núcleos, caché y unidad de control."},
-    {"title":"Importancia","content":"Determina la velocidad y capacidad."}
+
+<main class="container" role="main" aria-label="[translate:Información interactiva sobre tecnología]">
+  <!-- Ejemplo reducido para claridad, igual puedes ampliar -->
+  <article tabindex="0" class="card" data-category="basico hardware" data-title="[translate:Procesador (CPU)]" data-detail='[
+    {"title":"[translate:Función]","content":"[translate:Ejecuta instrucciones y procesa datos; es el cerebro del computador.]"},
+    {"title":"[translate:Componentes]","content":"[translate:Contiene núcleos, caché y unidad de control.]"},
+    {"title":"[translate:Importancia]","content":"[translate:Determina la velocidad y capacidad.]"}
   ]'>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect x="14" y="14" width="36" height="36" rx="6" ry="6" fill="none" stroke="#00e5ff" stroke-width="3"/></svg>
-    <h3>Procesador (CPU)</h3>
-    <p>Cerebro del computador.</p>
+    <h3>[translate:Procesador (CPU)]</h3>
+    <p>[translate:Cerebro del computador.]</p>
   </article>
-  <article tabindex="0" class="card" data-category="avanzado software" data-title="Inteligencia Artificial (IA)" data-detail='[
-    {"title":"Definición","content":"Simulación de inteligencia humana para tareas automatizadas."},
-    {"title":"Aplicaciones","content":"Reconocimiento de voz, visión artificial, robots y más."},
-    {"title":"Impacto","content":"Transforma industrias y mejora procesos complejos."}
+  <article tabindex="0" class="card" data-category="avanzado software" data-title="[translate:Inteligencia Artificial (IA)]" data-detail='[
+    {"title":"[translate:Definición]","content":"[translate:Simulación de inteligencia humana para tareas automatizadas.]"},
+    {"title":"[translate:Aplicaciones]","content":"[translate:Reconocimiento de voz, visión artificial, robots y más.]"},
+    {"title":"[translate:Impacto]","content":"[translate:Transforma industrias y mejora procesos complejos.]"}
   ]'>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><circle cx="32" cy="22" r="10" fill="none" stroke="#00e5ff" stroke-width="3"/></svg>
-    <h3>Inteligencia Artificial (IA)</h3>
-    <p>Máquinas inteligentes y automatización.</p>
+    <h3>[translate:Inteligencia Artificial (IA)]</h3>
+    <p>[translate:Máquinas inteligentes y automatización.]</p>
   </article>
-  <article tabindex="0" class="card" data-category="avanzado redes" data-title="Redes 5G" data-detail='[
-    {"title":"Definición","content":"Tecnología móvil de quinta generación, con alta velocidad y baja latencia."},
-    {"title":"Beneficios","content":"Mejor cobertura, capacidad y soporte para IoT."}
-  ]'>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="none" stroke="#00e5ff" stroke-width="4"/></svg>
-    <h3>Redes 5G</h3>
-    <p>Conectividad móvil ultra rápida.</p>
-  </article>
-  <article tabindex="0" class="card" data-category="seguridad avanzado" data-title="Ciberseguridad Avanzada" data-detail='[
-    {"title":"Amenazas","content":"Ataques sofisticados: ransomware, phishing, APT."},
-    {"title":"Medidas","content":"IA para detección, blockchain y monitoreo continuo."}
-  ]'>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path d="M32 12l18 10v18l-18 10-18-10V22z" fill="none" stroke="#00e5ff" stroke-width="4"/></svg>
-    <h3>Ciberseguridad Avanzada</h3>
-    <p>Defensa contra amenazas sofisticadas.</p>
-  </article>
-  <article tabindex="0" class="card" data-category="hardware avanzado" data-title="Computación Cuántica" data-detail='[
-    {"title":"Concepto","content":"Procesamiento basado en qubits, aprovechando la mecánica cuántica."},
-    {"title":"Potencial","content":"Solución de problemas complejos inalcanzables para computadoras clásicas."}
-  ]'>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><circle cx="32" cy="32" r="28" fill="none" stroke="#00bfff" stroke-width="3"/></svg>
-    <h3>Computación Cuántica</h3>
-    <p>Revolución en capacidad computacional.</p>
-  </article>
-  <!-- Agrega más tarjetas con categorías y detalles -->
+  <!-- ... agrega más recuadros aquí siguiendo el mismo formato ... -->
 </main>
 
-<button id="sound-toggle" aria-pressed="true" aria-label="Activar o desactivar efectos de sonido" title="Activar o desactivar sonido">
+<button id="sound-toggle" aria-pressed="true" aria-label="[translate:Activar o desactivar efectos de sonido]" title="[translate:Activar o desactivar sonido]">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#00e5ff" aria-hidden="true"><path d="M3 9v6h4l5 5V4L7 9H3zM16.5 12a4.5 4.5 0 0 1-8.45 2.55l1.43-1.43a3 3 0 0 0 5.6-2.35 3 3 0 0 0-1.02-2.27l-1.43-1.42A4.48 4.48 0 0 1 16.5 12z"/></svg>
 </button>
 
 <div id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-desc">
   <div id="modal-content">
-    <span id="modal-close" role="button" aria-label="Cerrar ventana" tabindex="0">&times;</span>
+    <span id="modal-close" role="button" aria-label="[translate:Cerrar ventana]" tabindex="0">&times;</span>
     <h2 id="modal-title"></h2>
     <ul id="modal-desc"></ul>
   </div>
 </div>
+
+<audio id="background-music" loop>
+  <source src="https://audio-previews.elements.envatousercontent.com/files/272534063/preview.mp3" type="audio/mp3" />
+  <source src="https://audio-previews.elements.envatousercontent.com/files/272534063/preview.ogg" type="audio/ogg" />
+</audio>
 
 <audio id="modal-sound" src="https://freesound.org/data/previews/522/522770_10951068-lq.mp3" preload="auto"></audio>
 
@@ -339,13 +363,26 @@
   const modalClose = document.getElementById('modal-close');
   const modalSound = document.getElementById('modal-sound');
   const soundToggle = document.getElementById('sound-toggle');
+  const backgroundMusic = document.getElementById('background-music');
   const searchInput = document.getElementById('searchInput');
   const filterButtons = document.querySelectorAll('.filter-btn');
 
   let soundEnabled = true;
 
+  // Intentar autoplay muted (muchos navegadores solo permiten autoplay sin sonido)
+  backgroundMusic.volume = 0.2;
+  backgroundMusic.muted = true;
+  backgroundMusic.play().catch(() => {});
+
   soundToggle.addEventListener('click', () => {
     soundEnabled = !soundEnabled;
+    if(soundEnabled) {
+      backgroundMusic.muted = false;
+      backgroundMusic.play().catch(()=>{});
+    } else {
+      backgroundMusic.muted = true;
+      backgroundMusic.pause();
+    }
     soundToggle.classList.toggle('active', !soundEnabled);
     soundToggle.setAttribute('aria-pressed', soundEnabled.toString());
   });
@@ -355,7 +392,6 @@
       modalTitle.textContent = card.dataset.title;
       const details = JSON.parse(card.dataset.detail);
       modalDesc.innerHTML = '';
-
       details.forEach(item => {
         const li = document.createElement('li');
         const h3 = document.createElement('h3');
@@ -370,7 +406,7 @@
       modal.classList.add('active');
       modalClose.focus();
 
-      if (soundEnabled) {
+      if(soundEnabled) {
         modalSound.currentTime = 0;
         modalSound.play();
       }
