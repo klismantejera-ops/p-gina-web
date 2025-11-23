@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Tecnología Futurista</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+  body {
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #00ffea;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  .container {
+    max-width: 1200px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-gap: 25px;
+  }
+  .card {
+    background: rgba(10,10,30,0.9);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 25px #00ffea88;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px #00fffaa0;
+  }
+  .card h3 {
+    margin-top: 0;
+    color: #00ffc8;
+    text-shadow: 0 0 10px #00ffea;
+    letter-spacing: 1.2px;
+  }
+  .card p {
+    line-height: 1.4;
+    font-size: 1rem;
+  }
+  @media (max-width: 480px) {
+    .container {
+      grid-template-columns: 1fr;
+    }
+    .card {
+      padding: 15px;
+    }
+  }
+</style>
+</head>
+<body>
+  <main class="container" role="main" aria-label="Información sobre tecnología">
+    <section class="card" tabindex="0">
+      <h3>Procesador (CPU)</h3>
+      <p>El procesador es el cerebro del computador, ejecuta instrucciones y procesa datos para realizar todas las tareas.</p>
+    </section>
+    <section class="card" tabindex="0">
+      <h3>Memoria RAM</h3>
+      <p>La memoria RAM es una memoria temporal que guarda datos e instrucciones que la CPU necesita en tiempo real.</p>
+    </section>
+    <section class="card" tabindex="0">
+      <h3>Disco Duro</h3>
+      <p>Dispositivo de almacenamiento permanente donde se guardan programas, documentos y el sistema operativo.</p>
+    </section>
+    <section class="card" tabindex="0">
+      <h3>Placa Base (Motherboard)</h3>
+      <p>Placa que conecta todos los componentes del computador permitiendo su comunicación y funcionamiento conjunto.</p>
+    </section>
+    <section class="card" tabindex="0">
+      <h3>Tarjeta Gráfica</h3>
+      <p>Hardware especializado que procesa las imágenes y señales visuales enviadas al monitor para mostrar gráficos y videos.</p>
+    </section>
+    <section class="card" tabindex="0">
+      <h3>Sistema Operativo</h3>
+      <p>Software que administra y coordina los recursos del hardware y provee servicios a los programas y usuarios.</
+        
