@@ -3,89 +3,101 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Tecnología Futurista Interactiva - Estilo Tron</title>
+<title>Tecnología Futurista Tron Mejorada</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
   body {
-    margin: 0;
+    margin:0;
     font-family: 'Orbitron', sans-serif;
-    background: radial-gradient(circle at center, #00171f, #00060f 80%);
-    color: #00f0ff;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    min-height: 100vh;
-    padding: 20px 10px;
+    background: radial-gradient(circle at center, #000810, #00182e 90%);
+    color: #00ffff;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    min-height:100vh;
+    padding:20px 10px;
   }
   .container {
-    max-width: 1200px;
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    grid-gap: 25px;
+    max-width:1200px;
+    width:100%;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    grid-gap:25px;
   }
   .card {
-    background: rgba(0, 23, 38, 0.85);
-    border-radius: 15px;
-    box-shadow: 0 0 25px #00f0ff88;
-    cursor: pointer;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 15px 15px 25px;
+    background:rgba(0,30,60,0.85);
+    border: 2px solid #00ffff;
+    border-radius:20px;
+    box-shadow:
+      0 0 25px #00ffffcc,
+      inset 0 0 15px #00eaffaa;
+    cursor:pointer;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:20px 16px 28px;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease,
+      border-color 0.4s ease;
+    position:relative;
+    user-select:none;
   }
   .card:hover {
-    transform: scale(1.07);
-    box-shadow: 0 0 45px #00f0fff0;
+    transform: scale(1.12);
+    border-color: #00eaff;
+    box-shadow:
+      0 0 75px #00eaffee,
+      inset 0 0 25px #00bfffcc,
+      inset 0 0 40px #00eaff99;
+    z-index:2;
   }
-  .card img {
-    max-width: 120px;
-    filter: drop-shadow(0 0 5px #00f0ffcc);
-    margin-bottom: 15px;
-    user-select: none;
-    pointer-events: none;
+  .card svg {
+    width: 96px;
+    height: 96px;
+    margin-bottom: 16px;
+    filter: drop-shadow(0 0 5px #00ffffdd);
+    pointer-events:none;
   }
   .card h3 {
-    margin: 0 0 10px;
-    color: #00b9ff;
-    text-shadow: 0 0 15px #00b9ff;
-    letter-spacing: 1.2px;
-    user-select: none;
+    margin:0 0 12px;
+    color: #00d4ff;
+    text-shadow: 0 0 20px #00ffffaa;
+    letter-spacing: 1.5px;
   }
   .card p {
-    font-size: 0.9rem;
-    line-height: 1.3;
-    user-select: none;
-    text-align: center;
-    color: #a0e9ff;
+    font-size:0.95rem;
+    line-height:1.4;
+    color:#8aefff;
+    text-align:center;
   }
-  @media (max-width: 480px) {
+  @media(max-width:480px){
     .container {
       grid-template-columns: 1fr;
     }
     .card {
-      padding: 15px;
+      padding: 20px 15px 25px;
     }
-    .card img {
-      max-width: 90px;
-      margin-bottom: 10px;
+    .card svg {
+      width: 72px;
+      height: 72px;
+      margin-bottom: 12px;
     }
   }
   /* Modal styles */
   #modal {
+    transition: opacity 0.35s ease, transform 0.35s ease;
     display: flex;
     position: fixed;
-    z-index: 1000;
+    z-index: 9999;
     justify-content: center;
     align-items: center;
     top: 0; right: 0; bottom: 0; left: 0;
-    background: rgba(0, 7, 15, 0.9);
+    background: rgba(0, 10, 15, 0.95);
     opacity: 0;
     pointer-events: none;
     transform: scale(0.95);
-    transition: opacity 0.35s ease, transform 0.35s ease;
   }
   #modal.active {
     opacity: 1;
@@ -93,51 +105,83 @@
     transform: scale(1);
   }
   #modal-content {
-    background: #002732;
-    border-radius: 20px;
-    max-width: 600px;
-    width: 90%;
-    padding: 30px 40px;
-    color: #00f0ff;
-    box-shadow: 0 0 45px #00b9ff;
+    background: #001f3f;
+    border-radius: 24px;
+    max-width: 640px;
+    width: 95%;
+    padding: 36px 48px;
+    color: #00ffff;
+    box-shadow: 0 0 80px #00bfff,
+                0 0 100px #00eaff;
     position: relative;
     font-weight: 500;
+    user-select: text;
   }
   #modal-close {
     position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size: 2.2rem;
-    font-weight: bold;
-    color: #00b9ff;
+    top: 14px;
+    right: 22px;
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: #00bfff;
     cursor: pointer;
     user-select: none;
     transition: color 0.3s ease;
   }
   #modal-close:hover {
-    color: #00f0ff;
+    color: #00ffff;
   }
   #modal h2 {
     margin-top: 0;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     text-align: center;
-    text-shadow: 0 0 20px #00f0ff;
+    text-shadow: 0 0 24px #00ffff;
     font-weight: 700;
   }
   #modal ul {
     list-style: none;
     padding-left: 0;
-    margin-top: 20px;
+    margin-top: 22px;
   }
   #modal ul li {
-    margin-bottom: 15px;
-    font-size: 1rem;
-    line-height: 1.4;
+    margin-bottom: 18px;
+    font-size: 1.07rem;
+    line-height: 1.5;
   }
   #modal ul li h3 {
-    margin: 0 0 5px;
-    color: #00bfff;
+    margin: 0 0 6px;
+    color: #00c6ff;
     font-weight: 600;
+  }
+  /* Sound Toggle Button */
+  #sound-toggle {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: transparent;
+    border: 2px solid #00ffff;
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    cursor: pointer;
+    box-shadow: 0 0 20px #00ffffaa;
+    transition: background-color 0.3s, border-color 0.3s;
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #sound-toggle:hover {
+    background-color: #00ffff22;
+    border-color: #00ffff;
+  }
+  #sound-toggle svg {
+    fill: #00ffff;
+    width: 28px;
+    height: 28px;
+  }
+  #sound-toggle.active svg {
+    fill: #001a2e;
   }
 </style>
 </head>
@@ -148,7 +192,7 @@
       {"title": "Aplicaciones", "content": "Se utiliza en comunicación, educación, industria, medicina y entretenimiento, entre otros."},
       {"title": "Impacto", "content": "Permite optimizar tareas, innovar procesos y facilita el acceso a la información global."}
       ]'>
-      <img src="https://img.icons8.com/ios-filled/100/00f0ff/technology.png" alt="Icono de Tecnología"/>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 2C15.64 2 2 15.64 2 32s13.64 30 30 30 30-13.64 30-30S48.36 2 32 2zm0 54C18.745 56 8 45.255 8 32S18.745 8 32 8s24 10.745 24 24-10.745 24-24 24z" fill="#00ffff"/></svg>
       <h3>Tecnología y su Uso</h3>
       <p>Conceptos básicos y aplicaciones generales.</p>
     </article>
@@ -158,7 +202,7 @@
       {"title": "Componentes", "content": "Contiene núcleos, caché y unidad de control."},
       {"title": "Importancia", "content": "Determina la velocidad y capacidad de procesamiento."}
       ]'>
-      <img src="https://img.icons8.com/ios-filled/100/00f0ff/processor.png" alt="Icono de Procesador"/>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true"><rect x="14" y="14" width="36" height="36" rx="6" ry="6" fill="#00ffff" stroke="#00bfff" stroke-width="2"/></svg>
       <h3>Procesador (CPU)</h3>
       <p>El cerebro del computador.</p>
     </article>
@@ -168,7 +212,7 @@
       {"title": "Función", "content": "Permite acceso rápido a la CPU para ejecutar programas."},
       {"title": "Tipos", "content": "DDR3, DDR4 y DDR5 son algunos tipos comunes de RAM."}
       ]'>
-      <img src="https://img.icons8.com/ios-filled/100/00f0ff/ram-memory-slot.png" alt="Icono de Memoria RAM"/>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true"><rect x="18" y="14" width="28" height="36" fill="#00f0ff" stroke="#00aeff" stroke-width="3"/></svg>
       <h3>Memoria RAM</h3>
       <p>Datos para procesamiento en tiempo real.</p>
     </article>
@@ -178,7 +222,7 @@
       {"title": "Tipos", "content": "HDD tradicional y SSD de estado sólido."},
       {"title": "Velocidad", "content": "Los SSD son mucho más rápidos que los HDD."}
       ]'>
-      <img src="https://img.icons8.com/ios-filled/100/00f0ff/hard-disk-drive.png" alt="Icono de Disco Duro"/>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="28" fill="none" stroke="#00ffff" stroke-width="5"/></svg>
       <h3>Disco Duro</h3>
       <p>Almacenamiento permanente.</p>
     </article>
@@ -188,7 +232,7 @@
       {"title": "Slots", "content": "Para CPU, RAM, tarjetas de expansión y otros dispositivos."},
       {"title": "Chipset", "content": "Controla el flujo de datos entre los componentes."}
       ]'>
-      <img src="https://img.icons8.com/ios-filled/100/00f0ff/motherboard.png" alt="Icono de Placa Base"/>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true"><rect x="8" y="8" width="48" height="48" fill="none" stroke="#00eaff" stroke-width="4" rx="10"/></svg>
       <h3>Placa Base (Motherboard)</h3>
       <p>Conexión central de componentes.</p>
     </article>
@@ -198,7 +242,7 @@
       {"title": "Tipos", "content": "Integradas y dedicadas para videojuegos y diseño."},
       {"title": "Importancia", "content": "Clave en renderizado gráfico y realidad virtual."}
       ]'>
-      <img src="https://img.icons8.com/ios-filled/100/00f0ff/video-card.png" alt="Icono de Tarjeta Gráfica"/>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true"><polygon points="8,16 56,16 56,48 8,48" fill="none" stroke="#00cfff" stroke-width="4"/></svg>
       <h3>Tarjeta Gráfica</h3>
       <p>Procesamiento de imágenes y video.</p>
     </article>
@@ -208,7 +252,7 @@
       {"title": "Ejemplos", "content": "Windows, Linux, macOS, Android."},
       {"title": "Funciones", "content": "Gestión de procesos, memoria y dispositivos."}
       ]'>
-      <img src="https://img.icons8.com/ios-filled/100/00f0ff/operating-system.png" alt="Icono de Sistema Operativo"/>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="28" fill="none" stroke="#00f0ff" stroke-width="5"/></svg>
       <h3>Sistema Operativo</h3>
       <p>Gestión y coordinación del hardware.</p>
     </article>
@@ -218,7 +262,7 @@
       {"title": "Ejemplos", "content": "Navegadores, procesadores de texto, juegos."},
       {"title": "Importancia", "content": "Facilitan la productividad y entretenimiento."}
       ]'>
-      <img src="https://img.icons8.com/ios-filled/100/00f0ff/application-window.png" alt="Icono de Software de Aplicación"/>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true"><rect x="12" y="12" width="40" height="40" fill="none" stroke="#00f0ff" stroke-width="5" rx="5"/></svg>
       <h3>Software de Aplicación</h3>
       <p>Herramientas para tareas específicas.</p>
     </article>
@@ -228,7 +272,7 @@
       {"title": "Tipos", "content": "Ethernet, Wi-Fi, Bluetooth."},
       {"title": "Uso", "content": "Comunicación con dispositivos e Internet."}
       ]'>
-      <img src="https://img.icons8.com/ios-filled/100/00f0ff/network-card.png" alt="Icono de Tarjeta de Red"/>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true"><path d="M12 42c0-8 10-12 20-12s20 4 20 12" fill="none" stroke="#00ffff" stroke-width="4"/></svg>
       <h3>Tarjeta de Red</h3>
       <p>Conexión a redes y comunicación.</p>
     </article>
@@ -238,7 +282,7 @@
       {"title": "Características", "content": "Convierte corriente alterna en continua."},
       {"title": "Importancia", "content": "Garantiza funcionamiento seguro y estable."}
       ]'>
-      <img src="https://img.icons8.com/ios-filled/100/00f0ff/power-supply.png" alt="Icono de Fuente de Poder"/>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true"><polygon points="18,18 46,18 46,46 18,46" fill="none" stroke="#00f0ff" stroke-width="4"/></svg>
       <h3>Fuente de Poder</h3>
       <p>Suministro eléctrico estable.</p>
     </article>
@@ -248,19 +292,25 @@
       {"title": "Ejemplos", "content": "Teclado, ratón, impresora, monitor."},
       {"title": "Función", "content": "Facilitan el uso y mejoran la experiencia del usuario."}
       ]'>
-      <img src="https://img.icons8.com/ios-filled/100/00f0ff/peripheral.png" alt="Icono de Periféricos"/>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="none" stroke="#00eaff" stroke-width="4"/></svg>
       <h3>Periféricos</h3>
       <p>Interacción y ampliación funcional.</p>
     </article>
   </main>
 
+  <button id="sound-toggle" aria-pressed="true" aria-label="Activar o desactivar efectos de sonido" title="Activar o desactivar sonido">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" fill="#00ffff"><path d="M3 9v6h4l5 5V4L7 9H3zM16.5 12a4.5 4.5 0 0 1-8.45 2.55l1.43-1.43a3 3 0 0 0 5.6-2.35 3 3 0 0 0-1.02-2.27l-1.43-1.42A4.48 4.48 0 0 1 16.5 12z"/></svg>
+  </button>
+
   <div id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-desc">
     <div id="modal-content">
-      <span id="modal-close" role="button" aria-label="Cerrar ventana">&times;</span>
+      <span id="modal-close" role="button" aria-label="Cerrar ventana" tabindex="0">&times;</span>
       <h2 id="modal-title"></h2>
       <ul id="modal-desc"></ul>
     </div>
   </div>
+
+  <audio id="modal-sound" src="https://freesound.org/data/previews/522/522770_10951068-lq.mp3" preload="auto"></audio>
 
 <script>
   const cards = document.querySelectorAll('.card');
@@ -268,6 +318,16 @@
   const modalTitle = document.getElementById('modal-title');
   const modalDesc = document.getElementById('modal-desc');
   const modalClose = document.getElementById('modal-close');
+  const modalSound = document.getElementById('modal-sound');
+  const soundToggle = document.getElementById('sound-toggle');
+
+  let soundEnabled = true;
+
+  soundToggle.addEventListener('click', () => {
+    soundEnabled = !soundEnabled;
+    soundToggle.classList.toggle('active', !soundEnabled);
+    soundToggle.setAttribute('aria-pressed', soundEnabled);
+  });
 
   cards.forEach(card => {
     card.addEventListener('click', () => {
@@ -288,6 +348,11 @@
 
       modal.classList.add('active');
       modalClose.focus();
+
+      if (soundEnabled) {
+        modalSound.currentTime = 0;
+        modalSound.play();
+      }
     });
     card.addEventListener('keypress', e => {
       if(e.key === 'Enter' || e.key === ' ') {
@@ -302,13 +367,13 @@
   });
 
   modal.addEventListener('click', e => {
-    if(e.target === modal) {
+    if (e.target === modal) {
       modal.classList.remove('active');
     }
   });
 
   document.addEventListener('keydown', e => {
-    if(e.key === 'Escape' && modal.classList.contains('active')) {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
       modal.classList.remove('active');
     }
   });
