@@ -3,86 +3,155 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Tecnología Futurista Avanzada - Estilo Tron</title>
+<title>Tecnología Futurista Avanzada - Bienvenida, sonido y más</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
   body {
     margin:0;
     font-family: 'Orbitron', sans-serif;
-    background: radial-gradient(circle at center, #000810, #00182e 90%);
-    color: #00ffff;
-    display:flex;
-    justify-content:center;
-    align-items:flex-start;
-    min-height:100vh;
-    padding:20px 10px;
-  }
-  .container {
-    max-width:1400px;
-    width:100%;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    grid-gap:22px;
-  }
-  .card {
-    background:rgba(0,30,60,0.85);
-    border: 2px solid #00ffff;
-    border-radius:20px;
-    box-shadow:
-      0 0 25px #00ffffcc,
-      inset 0 0 15px #00eaffaa;
-    cursor:pointer;
-    overflow:hidden;
+    background: radial-gradient(circle at center, #001622, #00305a 85%);
+    color: #00e5ff;
     display:flex;
     flex-direction: column;
-    align-items:center;
-    padding:20px 16px 28px;
-    transition:
-      transform 0.3s ease,
-      box-shadow 0.3s ease,
-      border-color 0.4s ease;
-    position:relative;
-    user-select:none;
+    align-items: center;
+    min-height:100vh;
+    padding: 25px 12px 60px;
+  }
+  header {
+    max-width: 900px;
+    width: 100%;
+    margin-bottom: 25px;
+    text-align: center;
+    padding: 25px 20px;
+    background: rgba(0, 48, 92, 0.9);
+    border: 2px solid #00d1ff;
+    border-radius: 20px;
+    box-shadow: 0 0 35px #00e5ffcc;
+  }
+  header h1 {
+    font-size: 2.6rem;
+    margin-bottom: 0.3em;
+    color: #00dfff;
+    text-shadow: 0 0 40px #00e5ffbb;
+    letter-spacing: 3px;
+  }
+  header p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.5;
+    color: #b3faffcc;
+  }
+  #searchInput {
+    margin: 25px auto 20px;
+    max-width: 500px;
+    width: 90%;
+    font-size: 1rem;
+    padding: 11px 18px;
+    border-radius: 25px;
+    border: 2px solid #00c7ff;
+    background: rgba(0,40,77,0.7);
+    color: #a7ecff;
+    box-shadow: inset 0 0 15px #00b6ffcc;
+    outline: none;
+    transition: 0.3s all;
+  }
+  #searchInput:focus {
+    border-color: #00f5ff;
+    box-shadow: inset 0 0 25px #00f5ffbb;
+  }
+  .filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    max-width: 900px;
+    margin-bottom: 32px;
+  }
+  .filter-btn {
+    background: transparent;
+    border: 2.5px solid #00baff;
+    padding: 9px 20px;
+    border-radius: 18px;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    color: #00baff;
+    cursor: pointer;
+    transition: all 0.35s ease;
+    user-select: none;
+    mix-blend-mode: screen;
+  }
+  .filter-btn.active, .filter-btn:hover {
+    background: #00e5ff;
+    color: #00304b;
+    box-shadow: 0 0 55px #00e5ffcc;
+    text-shadow: none;
+  }
+  .container {
+    max-width: 1400px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
+    gap: 24px;
+  }
+  .card {
+    background: rgba(0, 30, 60, 0.75);
+    border: 2.5px solid #00e5ff;
+    border-radius: 22px;
+    box-shadow:
+      0 0 30px #00dfffbb,
+      inset 0 0 20px #00b9ffcc;
+    cursor: pointer;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 20px 30px;
+    transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.4s ease;
+    user-select: none;
+    position: relative;
   }
   .card:hover {
-    transform: scale(1.12);
-    border-color: #00eaff;
+    transform: scale(1.13);
     box-shadow:
-      0 0 75px #00eaffee,
-      inset 0 0 25px #00bfffcc,
-      inset 0 0 40px #00eaff99;
-    z-index:2;
+      0 0 90px #00ffffee,
+      inset 0 0 45px #00ccffff,
+      inset 0 0 60px #00e5ffff;
+    border-color: #00e5ff;
+    z-index: 5;
   }
   .card svg {
-    width: 90px;
-    height: 90px;
-    margin-bottom: 15px;
-    filter: drop-shadow(0 0 6px #00ffffdd);
-    pointer-events:none;
+    width: 84px;
+    height: 84px;
+    margin-bottom: 16px;
+    filter: drop-shadow(0 0 8px #00ebffcc);
+    pointer-events: none;
+    user-select:none;
   }
   .card h3 {
-    margin:0 0 8px;
-    color: #00d4ff;
-    text-shadow: 0 0 20px #00ffffaa;
-    letter-spacing: 1.2px;
+    margin: 0 0 10px;
+    color: #00d9ff;
+    text-shadow: 0 0 20px #00e1ffbb;
+    letter-spacing: 1.5px;
   }
   .card p {
-    font-size:0.9rem;
-    line-height:1.4;
-    color:#8aefff;
-    text-align:center;
+    font-size: 0.95rem;
+    line-height: 1.48;
+    color: #94e7ffaa;
+    text-align: center;
   }
-  @media(max-width:480px){
+  @media (max-width: 480px) {
     .container {
       grid-template-columns: 1fr;
     }
     .card {
-      padding: 20px 15px 25px;
+      padding: 20px 18px 28px;
     }
     .card svg {
       width: 60px;
       height: 60px;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
   }
   #modal {
@@ -93,7 +162,7 @@
     justify-content: center;
     align-items: center;
     top: 0; right: 0; bottom: 0; left: 0;
-    background: rgba(0, 10, 15, 0.95);
+    background: rgba(0, 10, 15, 0.97);
     opacity: 0;
     pointer-events: none;
     transform: scale(0.95);
@@ -104,14 +173,15 @@
     transform: scale(1);
   }
   #modal-content {
-    background: #001f3f;
-    border-radius: 24px;
-    max-width: 700px;
+    background: #002544;
+    border-radius: 26px;
+    max-width: 720px;
     width: 95%;
-    padding: 36px 48px;
+    padding: 42px 56px;
     color: #00ffff;
-    box-shadow: 0 0 80px #00bfff,
-                0 0 100px #00eaff;
+    box-shadow:
+      0 0 110px #00cfff,
+      0 0 140px #00e7ff;
     position: relative;
     font-weight: 500;
     user-select: text;
@@ -120,9 +190,9 @@
   }
   #modal-close {
     position: absolute;
-    top: 14px;
-    right: 22px;
-    font-size: 2.6rem;
+    top: 12px;
+    right: 24px;
+    font-size: 3rem;
     font-weight: 700;
     color: #00bfff;
     cursor: pointer;
@@ -134,37 +204,37 @@
   }
   #modal h2 {
     margin-top: 0;
-    letter-spacing: 3px;
+    letter-spacing: 4px;
     text-align: center;
-    text-shadow: 0 0 24px #00ffff;
-    font-weight: 700;
+    text-shadow: 0 0 28px #00ffff;
+    font-weight: 800;
   }
   #modal ul {
     list-style: none;
     padding-left: 0;
-    margin-top: 22px;
+    margin-top: 26px;
   }
   #modal ul li {
-    margin-bottom: 18px;
-    font-size: 1.1rem;
-    line-height: 1.5;
+    margin-bottom: 20px;
+    font-size: 1.15rem;
+    line-height: 1.6;
   }
   #modal ul li h3 {
-    margin: 0 0 6px;
+    margin: 0 0 8px;
     color: #00bfff;
-    font-weight: 600;
+    font-weight: 700;
   }
   #sound-toggle {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
+    bottom: 34px;
+    right: 36px;
     background: transparent;
-    border: 2px solid #00ffff;
+    border: 2.5px solid #00e5ff;
     border-radius: 50%;
-    width: 56px;
-    height: 56px;
+    width: 58px;
+    height: 58px;
     cursor: pointer;
-    box-shadow: 0 0 20px #00ffffaa;
+    box-shadow: 0 0 26px #00e5ffbb;
     transition: background-color 0.3s, border-color 0.3s;
     z-index: 10000;
     display: flex;
@@ -172,13 +242,13 @@
     align-items: center;
   }
   #sound-toggle:hover {
-    background-color: #00ffff22;
-    border-color: #00ffff;
+    background-color: #00e5ff33;
+    border-color: #00e5ff;
   }
   #sound-toggle svg {
-    fill: #00ffff;
-    width: 28px;
-    height: 28px;
+    fill: #00e5ff;
+    width: 30px;
+    height: 30px;
   }
   #sound-toggle.active svg {
     fill: #001a2e;
@@ -186,154 +256,80 @@
 </style>
 </head>
 <body>
-  <main class="container" role="main" aria-label="Información interactiva sobre tecnología">
-    <!-- Recuadros básicos -->
-    <article class="card" tabindex="0" data-title="Tecnología y su Uso" data-detail='[
-      {"title": "Definición", "content": "La tecnología engloba conocimientos, técnicas y procesos para crear herramientas que mejoran la vida."},
-      {"title": "Aplicaciones", "content": "Se utiliza en comunicación, educación, industria, medicina y entretenimiento."},
-      {"title": "Impacto", "content": "Permite optimizar tareas e innovar procesos."}
-      ]'>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="none" stroke="#00ffff" stroke-width="4"/></svg>
-      <h3>Tecnología y su Uso</h3>
-      <p>Conceptos y aplicaciones generales.</p>
-    </article>
-
-    <article class="card" tabindex="0" data-title="Procesador (CPU)" data-detail='[
-      {"title": "Función", "content": "Ejecuta instrucciones y procesa datos; es el cerebro del computador."},
-      {"title": "Componentes", "content": "Contiene núcleos, caché y unidad de control."},
-      {"title": "Importancia", "content": "Determina la velocidad y capacidad."}
-      ]'>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true"><rect x="14" y="14" width="36" height="36" rx="6" ry="6" fill="none" stroke="#00ffff" stroke-width="3"/></svg>
-      <h3>Procesador (CPU)</h3>
-      <p>Cerebro del computador.</p>
-    </article>
-
-    <article class="card" tabindex="0" data-title="Memoria RAM" data-detail='[
-      {"title": "Definición", "content": "Memoria rápida para guardar datos inmediatos y programas."},
-      {"title": "Tipos comunes", "content": "DDR3, DDR4 y DDR5 con diferentes velocidades y capacidades."}
-      ]'>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true"><rect x="18" y="14" width="28" height="36" fill="none" stroke="#00ffff" stroke-width="4"/></svg>
-      <h3>Memoria RAM</h3>
-      <p>Datos para procesamiento en tiempo real.</p>
-    </article>
-
-    <article class="card" tabindex="0" data-title="Almacenamiento SSD" data-detail='[
-      {"title": "Definición", "content": "Almacenamiento sin partes móviles, más rápido y durable que HDD."},
-      {"title": "Uso", "content": "Ideal para ejecutar sistemas y aplicaciones."}
-      ]'>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true"><rect x="14" y="18" width="36" height="28" fill="none" stroke="#00ffff" stroke-width="4" rx="4"/></svg>
-      <h3>Almacenamiento SSD</h3>
-      <p>Unidad rápida y durable.</p>
-    </article>
-
-    <!-- Recuadros avanzados -->
-    <article class="card" tabindex="0" data-title="Inteligencia Artificial (IA)" data-detail='[
-      {"title": "Definición", "content": "Simulación de inteligencia humana en máquinas para tareas automatizadas."},
-      {"title": "Aplicaciones", "content": "Reconocimiento de voz, visión artificial, robots y más."},
-      {"title": "Impacto", "content": "Transforma industrias y mejora la eficiencia en procesos complejos."}
-      ]'>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="22" r="10" fill="none" stroke="#00ffff" stroke-width="3"/></svg>
-      <h3>Inteligencia Artificial (IA)</h3>
-      <p>Máquinas inteligentes y automatización.</p>
-    </article>
-
-    <article class="card" tabindex="0" data-title="Computación en la Nube" data-detail='[
-      {"title": "Definición", "content": "Servicio de recursos computacionales a través de Internet."},
-      {"title": "Ventajas", "content": "Acceso remoto, escalabilidad y ahorro en costos."},
-      {"title": "Modelos", "content": "IaaS, PaaS, SaaS para servicios distintos."}
-      ]'>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true"><path d="M10 30h44v18H10z" fill="none" stroke="#00ffff" stroke-width="4"/></svg>
-      <h3>Computación en la Nube</h3>
-      <p>Recursos y servicios vía Internet.</p>
-    </article>
-
-    <article class="card" tabindex="0" data-title="Redes 5G" data-detail='[
-      {"title": "Definición", "content": "Tecnología móvil de quinta generación, con alta velocidad y baja latencia."},
-      {"title": "Beneficios", "content": "Mejor cobertura, capacidad y soporte para IoT."}
-      ]'>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="none" stroke="#00ffff" stroke-width="4"/></svg>
-      <h3>Redes 5G</h3>
-      <p>Conectividad móvil ultra rápida.</p>
-    </article>
-
-    <article class="card" tabindex="0" data-title="Ciberseguridad Avanzada" data-detail='[
-      {"title": "Amenazas", "content": "Ataques sofisticados: ransomware, phishing, APT."},
-      {"title": "Medidas", "content": "IA para detección, blockchain y monitoreo continuo."}
-      ]'>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 12l18 10v18l-18 10-18-10V22z" fill="none" stroke="#00ffff" stroke-width="4"/></svg>
-      <h3>Ciberseguridad Avanzada</h3>
-      <p>Defensa contra amenazas sofisticadas.</p>
-    </article>
-
-    <article class="card" tabindex="0" data-title="Redes Neuronales Profundas" data-detail='[
-      {"title": "Concepto", "content": "Modelos de IA basados en capas de neuronas artificiales."},
-      {"title": "Uso", "content": "Reconocimiento de voz, imagen y lenguaje natural."}
-      ]'>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true"><rect x="18" y="18" width="28" height="28" fill="none" stroke="#00ffff" stroke-width="3"/></svg>
-      <h3>Redes Neuronales</h3>
-      <p>Modelos complejos de inteligencia artificial.</p>
-    </article>
-
-    <article class="card" tabindex="0" data-title="Blockchain y Criptomonedas" data-detail='[
-      {"title": "Blockchain", "content": "Base de datos distribuida para transacciones seguras."},
-      {"title": "Criptomonedas", "content": "Monedas digitales descentralizadas como Bitcoin y Ethereum."}
-      ]'>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true"><polygon points="16,24 48,16 48,48 16,40" fill="none" stroke="#00ffff" stroke-width="3"/></svg>
-      <h3>Blockchain y Cripto</h3>
-      <p>Seguridad y descentralización digital.</p>
-    </article>
-
-    <article class="card" tabindex="0" data-title="Realidad Virtual y Aumentada" data-detail='[
-      {"title": "Definición", "content": "Tecnologías que crean entornos virtuales o enriquecen el real."},
-      {"title": "Aplicaciones", "content": "Juegos, formación, simulaciones y comercio."}
-      ]'>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="none" stroke="#00ffff" stroke-width="3"/></svg>
-      <h3>Realidad Virtual y Aumentada</h3>
-      <p>Mundos digitales y enriquecidos.</p>
-    </article>
-
-    <article class="card" tabindex="0" data-title="Computación Cuántica" data-detail='[
-      {"title": "Concepto", "content": "Procesamiento basado en qubits, aprovechando la mecánica cuántica."},
-      {"title": "Potencial", "content": "Solución de problemas complejos inalcanzables para computadoras clásicas."}
-      ]'>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="28" fill="none" stroke="#00bfff" stroke-width="3"/></svg>
-      <h3>Computación Cuántica</h3>
-      <p>Revolución en capacidad computacional.</p>
-    </article>
-
-    <article class="card" tabindex="0" data-title="Edge Computing" data-detail='[
-      {"title": "Definición", "content": "Procesamiento de datos cerca de la fuente generadora."},
-      {"title": "Ventajas", "content": "Reduce latencia y aumenta eficiencia en IoT y 5G."}
-      ]'>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true"><rect x="18" y="18" width="28" height="28" fill="none" stroke="#00ffff" stroke-width="4"/></svg>
-      <h3>Edge Computing</h3>
-      <p>Procesamiento descentralizado eficiente.</p>
-    </article>
-
-    <article class="card" tabindex="0" data-title="Robótica Avanzada" data-detail='[
-      {"title": "Descripción", "content": "Máquinas con capacidad para realizar tareas complejas autonomamente."},
-      {"title": "Áreas", "content": "Industria, medicina, exploración espacial y más."}
-      ]'>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true"><path d="M16 16h32v32H16z" fill="none" stroke="#00ffff" stroke-width="4"/></svg>
-      <h3>Robótica Avanzada</h3>
-      <p>Máquinas autónomas y complejas.</p>
-    </article>
-
-  </main>
-
-  <button id="sound-toggle" aria-pressed="true" aria-label="Activar o desactivar efectos de sonido" title="Activar o desactivar sonido">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" fill="#00ffff"><path d="M3 9v6h4l5 5V4L7 9H3zM16.5 12a4.5 4.5 0 0 1-8.45 2.55l1.43-1.43a3 3 0 0 0 5.6-2.35 3 3 0 0 0-1.02-2.27l-1.43-1.42A4.48 4.48 0 0 1 16.5 12z"/></svg>
-  </button>
-
-  <div id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-desc">
-    <div id="modal-content">
-      <span id="modal-close" role="button" aria-label="Cerrar ventana" tabindex="0">&times;</span>
-      <h2 id="modal-title"></h2>
-      <ul id="modal-desc"></ul>
-    </div>
+<header>
+  <h1>Bienvenido a la Tecnología Futurista</h1>
+  <p>Explora una amplia gama de tecnologías, desde lo básico hasta lo más avanzado, con información clara y visualmente impactante. ¡Haz clic en cualquier recuadro para aprender más!</p>
+  <input type="search" id="searchInput" aria-label="Buscar tarjetas" placeholder="Buscar tecnología..." />
+  <div class="filters" role="group" aria-label="Filtros de categorías">
+    <button class="filter-btn active" data-filter="all" aria-pressed="true">Todas</button>
+    <button class="filter-btn" data-filter="basico" aria-pressed="false">Básico</button>
+    <button class="filter-btn" data-filter="avanzado" aria-pressed="false">Avanzado</button>
+    <button class="filter-btn" data-filter="redes" aria-pressed="false">Redes</button>
+    <button class="filter-btn" data-filter="software" aria-pressed="false">Software</button>
+    <button class="filter-btn" data-filter="hardware" aria-pressed="false">Hardware</button>
+    <button class="filter-btn" data-filter="seguridad" aria-pressed="false">Seguridad</button>
   </div>
+</header>
+<main class="container" role="main" aria-label="Información interactiva sobre tecnología">
+  <!-- Ejemplos exagerados: añade tantas tarjetas como quieras -->
+  <article tabindex="0" class="card" data-category="basico hardware" data-title="Procesador (CPU)" data-detail='[
+    {"title":"Función","content":"Ejecuta instrucciones y procesa datos; es el cerebro del computador."},
+    {"title":"Componentes","content":"Contiene núcleos, caché y unidad de control."},
+    {"title":"Importancia","content":"Determina la velocidad y capacidad."}
+  ]'>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect x="14" y="14" width="36" height="36" rx="6" ry="6" fill="none" stroke="#00e5ff" stroke-width="3"/></svg>
+    <h3>Procesador (CPU)</h3>
+    <p>Cerebro del computador.</p>
+  </article>
+  <article tabindex="0" class="card" data-category="avanzado software" data-title="Inteligencia Artificial (IA)" data-detail='[
+    {"title":"Definición","content":"Simulación de inteligencia humana para tareas automatizadas."},
+    {"title":"Aplicaciones","content":"Reconocimiento de voz, visión artificial, robots y más."},
+    {"title":"Impacto","content":"Transforma industrias y mejora procesos complejos."}
+  ]'>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><circle cx="32" cy="22" r="10" fill="none" stroke="#00e5ff" stroke-width="3"/></svg>
+    <h3>Inteligencia Artificial (IA)</h3>
+    <p>Máquinas inteligentes y automatización.</p>
+  </article>
+  <article tabindex="0" class="card" data-category="avanzado redes" data-title="Redes 5G" data-detail='[
+    {"title":"Definición","content":"Tecnología móvil de quinta generación, con alta velocidad y baja latencia."},
+    {"title":"Beneficios","content":"Mejor cobertura, capacidad y soporte para IoT."}
+  ]'>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="none" stroke="#00e5ff" stroke-width="4"/></svg>
+    <h3>Redes 5G</h3>
+    <p>Conectividad móvil ultra rápida.</p>
+  </article>
+  <article tabindex="0" class="card" data-category="seguridad avanzado" data-title="Ciberseguridad Avanzada" data-detail='[
+    {"title":"Amenazas","content":"Ataques sofisticados: ransomware, phishing, APT."},
+    {"title":"Medidas","content":"IA para detección, blockchain y monitoreo continuo."}
+  ]'>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path d="M32 12l18 10v18l-18 10-18-10V22z" fill="none" stroke="#00e5ff" stroke-width="4"/></svg>
+    <h3>Ciberseguridad Avanzada</h3>
+    <p>Defensa contra amenazas sofisticadas.</p>
+  </article>
+  <article tabindex="0" class="card" data-category="hardware avanzado" data-title="Computación Cuántica" data-detail='[
+    {"title":"Concepto","content":"Procesamiento basado en qubits, aprovechando la mecánica cuántica."},
+    {"title":"Potencial","content":"Solución de problemas complejos inalcanzables para computadoras clásicas."}
+  ]'>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><circle cx="32" cy="32" r="28" fill="none" stroke="#00bfff" stroke-width="3"/></svg>
+    <h3>Computación Cuántica</h3>
+    <p>Revolución en capacidad computacional.</p>
+  </article>
+  <!-- Agrega más tarjetas con categorías y detalles -->
+</main>
 
-  <audio id="modal-sound" src="https://freesound.org/data/previews/522/522770_10951068-lq.mp3" preload="auto"></audio>
+<button id="sound-toggle" aria-pressed="true" aria-label="Activar o desactivar efectos de sonido" title="Activar o desactivar sonido">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#00e5ff" aria-hidden="true"><path d="M3 9v6h4l5 5V4L7 9H3zM16.5 12a4.5 4.5 0 0 1-8.45 2.55l1.43-1.43a3 3 0 0 0 5.6-2.35 3 3 0 0 0-1.02-2.27l-1.43-1.42A4.48 4.48 0 0 1 16.5 12z"/></svg>
+</button>
+
+<div id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-desc">
+  <div id="modal-content">
+    <span id="modal-close" role="button" aria-label="Cerrar ventana" tabindex="0">&times;</span>
+    <h2 id="modal-title"></h2>
+    <ul id="modal-desc"></ul>
+  </div>
+</div>
+
+<audio id="modal-sound" src="https://freesound.org/data/previews/522/522770_10951068-lq.mp3" preload="auto"></audio>
 
 <script>
   const cards = document.querySelectorAll('.card');
@@ -343,20 +339,22 @@
   const modalClose = document.getElementById('modal-close');
   const modalSound = document.getElementById('modal-sound');
   const soundToggle = document.getElementById('sound-toggle');
+  const searchInput = document.getElementById('searchInput');
+  const filterButtons = document.querySelectorAll('.filter-btn');
 
   let soundEnabled = true;
 
   soundToggle.addEventListener('click', () => {
     soundEnabled = !soundEnabled;
     soundToggle.classList.toggle('active', !soundEnabled);
-    soundToggle.setAttribute('aria-pressed', soundEnabled);
+    soundToggle.setAttribute('aria-pressed', soundEnabled.toString());
   });
 
   cards.forEach(card => {
     card.addEventListener('click', () => {
       modalTitle.textContent = card.dataset.title;
       const details = JSON.parse(card.dataset.detail);
-      modalDesc.innerHTML = ''; // limpiar
+      modalDesc.innerHTML = '';
 
       details.forEach(item => {
         const li = document.createElement('li');
@@ -390,18 +388,48 @@
   });
 
   modal.addEventListener('click', e => {
-    if (e.target === modal) {
+    if(e.target === modal) {
       modal.classList.remove('active');
     }
   });
 
   document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && modal.classList.contains('active')) {
+    if(e.key === 'Escape' && modal.classList.contains('active')) {
       modal.classList.remove('active');
     }
   });
-</script>
-  <script src='https://cdn.jotfor.ms/agent/embedjs/019aaf15263d7b3799a93228af14dc9a216a/embed.js'>
+
+  function filterCards() {
+    const query = searchInput.value.toLowerCase();
+    const activeFilter = [...filterButtons].find(btn => btn.classList.contains('active'));
+    cards.forEach(card => {
+      const title = card.dataset.title.toLowerCase();
+      const cat = card.dataset.category.toLowerCase();
+      const textMatch = title.includes(query) || cat.includes(query);
+      const filterMatch = activeFilter.dataset.filter === "all" || cat.includes(activeFilter.dataset.filter);
+      if(textMatch && filterMatch) {
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+
+  searchInput.addEventListener('input', filterCards);
+
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterButtons.forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-pressed', 'false');
+      });
+      btn.classList.add('active');
+      btn.setAttribute('aria-pressed', 'true');
+      filterCards();
+    });
+  });
+
+  filterCards();
 </script>
 </body>
 </html>
