@@ -292,17 +292,6 @@
     fill: #001f3c;
   }
 
-  iframe#music-frame {
-    position: fixed;
-    bottom: 10px;
-    left: 10px;
-    width: 320px;
-    height: 80px;
-    border: none;
-    border-radius: 14px;
-    box-shadow: 0 0 20px #00aaff88;
-    z-index: 10001;
-  }
 </style>
 </head>
 <body>
@@ -390,15 +379,15 @@
     <p>Cerebro del computador, centraliza el procesamiento.</p>
   </article>
 
-  <!-- Más recuadros pueden añadirse aquí -->
+  <!-- Puedes añadir más recuadros aquí siguiendo el mismo formato -->
 
 </main>
 
-<button id="sound-toggle" aria-pressed="true" aria-label="Activar o desactivar efectos de sonido" title="Activar o desactivar sonido">
+<button id="sound-toggle" aria-pressed="true" aria-label="Activar o desactivar efectos de sonido" title="Activar o desactivar sonido" style="display:none;">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#00c8ff" aria-hidden="true"><path d="M3 9v6h4l5 5V4L7 9H3zM16.5 12a4.5 4.5 0 0 1-8.45 2.55l1.43-1.43a3 3 0 0 0 5.6-2.35 3 3 0 0 0-1.02-2.27l-1.43-1.42A4.48 4.48 0 0 1 16.5 12z"/></svg>
 </button>
 
-<iframe id="music-frame" src="https://www.youtube.com/embed/9c4KAnQpdGw?autoplay=1&loop=1&playlist=9c4KAnQpdGw&controls=1" allow="autoplay; encrypted-media" allowfullscreen aria-label="Música de fondo UB40 - Kingston Town" style="position: fixed; bottom: 10px; left: 10px; width: 320px; height: 80px; border: none; border-radius: 14px; box-shadow: 0 0 20px #00aaff88; z-index: 10001;"></iframe>
+<!-- Música eliminada -->
 
 <div id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-desc">
   <div id="modal-content">
@@ -414,22 +403,8 @@
   const modalTitle = document.getElementById('modal-title');
   const modalDesc = document.getElementById('modal-desc');
   const modalClose = document.getElementById('modal-close');
-  const soundToggle = document.getElementById('sound-toggle');
   const searchInput = document.getElementById('searchInput');
   const filterButtons = document.querySelectorAll('.filter-btn');
-  const musicFrame = document.getElementById('music-frame');
-  let soundEnabled = true;
-
-  soundToggle.addEventListener('click', () => {
-    soundEnabled = !soundEnabled;
-    if (soundEnabled) {
-      musicFrame.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
-    } else {
-      musicFrame.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
-    }
-    soundToggle.classList.toggle('active', !soundEnabled);
-    soundToggle.setAttribute('aria-pressed', soundEnabled.toString());
-  });
 
   function openModal(card) {
     modalTitle.textContent = card.dataset.title;
