@@ -469,121 +469,192 @@
 
   filterCards();
 </script>
-  <script src='https://cdn.jotfor.ms/agent/embedjs/019aaf15263d7b3799a93228af14dc9a216a/embed.js'>
-</script>
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Página con Cuestionario en Recuadro</title>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Cuestionario Hardware y Redes - Estilo Futurista</title>
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
   body {
-    font-family: Arial, sans-serif;
-    margin: 0; padding: 0;
-    background-color: #e0e4e7;
-    display: flex;
+    margin:0;
+    font-family: 'Orbitron', sans-serif;
+    background: radial-gradient(circle at center, #001622, #00305a 95%);
+    color: #00e5ff;
+    display:flex;
     justify-content: center;
-    padding: 40px 20px;
+    align-items: flex-start;
     min-height: 100vh;
+    padding: 40px 20px;
   }
   .card {
-    background: white;
-    max-width: 700px;
-    width: 100%;
-    border-radius: 15px;
-    padding: 30px;
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    background: rgba(0,40,75,0.9);
+    border: 3px solid #00cfffcc;
+    border-radius: 22px;
+    box-shadow:
+      0 0 50px #00cfffcc,
+      inset 0 0 25px #0077aaee;
+    padding: 30px 32px;
+    width: 600px;
+    max-width: 95vw;
   }
   h1 {
     text-align: center;
-    color: #222;
-    margin-bottom: 25px;
+    color: #00b7ff;
+    text-shadow: 0 0 20px #00e5ffbb;
+    margin-bottom: 20px;
   }
-  /* Contenido del cuestionario */
-  #question-container, #result-container {
-    margin-top: 20px;
+  label {
+    display: block;
+    margin-bottom: 8px;
+    color: #a2e6ff;
+    font-weight: 600;
+  }
+  input[type="text"] {
+    width: 100%;
+    font-size: 1.1rem;
+    padding: 10px 15px;
+    border-radius: 12px;
+    border: 2px solid #00aaff;
+    background: rgba(0,50,90,0.6);
+    color: #c7eefb;
+    box-shadow: inset 0 0 15px #00ccffbb;
+    margin-bottom: 18px;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  input[type="text"]:focus {
+    border-color: #00e5ff;
+    box-shadow: inset 0 0 25px #00e5ffbb;
   }
   #start-btn, #next-btn {
-    background-color: #007BFF;
-    color: white;
+    background-color: #00caff;
+    color: #002f48;
     border: none;
-    padding: 12px 20px;
-    font-size: 1rem;
-    border-radius: 5px;
+    padding: 14px 0;
+    font-size: 1.1rem;
+    border-radius: 12px;
     cursor: pointer;
-    margin-top: 15px;
     width: 100%;
+    margin-top: 18px;
+    font-weight: 700;
+    box-shadow: 0 0 18px #00b8ffcc;
+    transition: background-color 0.3s ease;
   }
   #start-btn:disabled {
-    background-color: gray;
+    background-color: #006684;
     cursor: not-allowed;
+    box-shadow: none;
+    color: #004f6b;
+  }
+  #start-btn:hover:not(:disabled),
+  #next-btn:hover:not(:disabled) {
+    background-color: #00e5ff;
+    box-shadow: 0 0 40px #00e5ffcc;
+  }
+  #question-container {
+    margin-top: 25px;
   }
   .question {
-    font-size: 1.2rem;
-    margin-bottom: 15px;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
   }
   .answers {
     display: flex;
     flex-direction: column;
   }
   .answer-btn {
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    padding: 11px;
+    background-color: #005d8d;
+    border: 2px solid #00aeff;
+    color: #b4e2ff;
+    padding: 12px;
     margin: 6px 0;
-    border-radius: 6px;
+    border-radius: 12px;
     cursor: pointer;
     text-align: left;
+    font-weight: 600;
     font-size: 1rem;
-    transition: background-color 0.2s;
+    transition: background-color 0.25s ease;
   }
   .answer-btn:hover {
-    background-color: #d9eaff;
+    background-color: #00baff;
+    color: #003049;
   }
   .selected {
-    background-color: #a3c8ff;
+    background-color: #008ecc;
+    color: #e0f6ff;
+  }
+  #result-container {
+    margin-top: 25px;
   }
   #result-container h2 {
-    color: #444;
+    color: #00caff;
+    text-align: center;
+    margin-bottom: 15px;
+    text-shadow: 0 0 24px #00e5ffcc;
+  }
+  #score {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 15px;
+    color: #a0dfff;
+  }
+  #details ul {
+    list-style: none;
+    padding-left: 0;
+    color: #96d6ffcc;
+  }
+  #details li {
+    margin-bottom: 10px;
   }
   .correct {
-    color: green;
+    color: #00ff00;
+    font-weight: 700;
   }
   .incorrect {
-    color: red;
+    color: #ff4444;
+    font-weight: 700;
   }
-  input[type="text"] {
-    padding: 10px 14px;
-    font-size: 1rem;
-    width: 100%;
-    box-sizing: border-box;
-    margin-top: 6px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
+  @media(max-width: 480px) {
+    .card {
+      width: 90vw;
+      padding: 24px 20px;
+    }
+    .question {
+      font-size: 1.1rem;
+    }
+    #start-btn, #next-btn {
+      font-size: 1rem;
+      padding: 12px 0;
+    }
+    .answer-btn {
+      font-size: 0.95rem;
+      padding: 10px;
+    }
   }
 </style>
 </head>
 <body>
+  <div class="card" role="main" aria-label="Cuestionario Hardware y Redes">
+    <h1>Cuestionario Hardware y Redes</h1>
+    <label for="student-name">Nombre del estudiante:</label>
+    <input type="text" id="student-name" aria-required="true" placeholder="Escribe tu nombre" />
+    <button id="start-btn" disabled aria-disabled="true">Iniciar cuestionario</button>
 
-<div class="card">
-  <h1>Cuestionario Hardware y Redes</h1>
-  <label for="student-name">Nombre del estudiante:</label>
-  <input type="text" id="student-name" placeholder="Escribe tu nombre" />
-  <button id="start-btn" disabled>Iniciar cuestionario</button>
+    <div id="question-container" class="hide" aria-live="polite">
+      <div id="question" class="question"></div>
+      <div id="answers" class="answers"></div>
+      <button id="next-btn" disabled aria-disabled="true">Siguiente</button>
+    </div>
 
-  <div id="question-container" class="hide" aria-live="polite">
-    <div id="question" class="question"></div>
-    <div id="answers" class="answers"></div>
-    <button id="next-btn" disabled>Siguiente</button>
+    <div id="result-container" class="hide" aria-live="polite">
+      <h2>Resultados</h2>
+      <div id="score"></div>
+      <div id="details"></div>
+    </div>
   </div>
-
-  <div id="result-container" class="hide" aria-live="polite">
-    <h2>Resultados</h2>
-    <div id="score"></div>
-    <div id="details"></div>
-  </div>
-</div>
 
 <script>
   const startBtn = document.getElementById('start-btn');
@@ -649,9 +720,10 @@
   let score = 0;
   let selectedAnswers = [];
 
-  // Habilitar botón iniciar solo si hay nombre
   studentNameInput.addEventListener('input', () => {
-    startBtn.disabled = studentNameInput.value.trim() === "";
+    const isValidName = studentNameInput.value.trim() !== "";
+    startBtn.disabled = !isValidName;
+    startBtn.setAttribute('aria-disabled', !isValidName);
   });
 
   startBtn.addEventListener('click', () => {
@@ -694,6 +766,7 @@
 
   function resetState() {
     nextBtn.disabled = true;
+    nextBtn.setAttribute('aria-disabled', true);
     while (answersElem.firstChild) {
       answersElem.removeChild(answersElem.firstChild);
     }
@@ -704,45 +777,3 @@
     const correct = selectedBtn.dataset.correct === "true";
     selectedAnswers[currentQuestionIndex] = correct;
     if(correct) score++;
-
-    Array.from(answersElem.children).forEach(button => {
-      button.classList.remove('selected');
-      button.disabled = true;
-      if(button.dataset.correct === "true") {
-        button.style.borderColor = "green";
-      }
-      if(button === selectedBtn && !correct) {
-        button.style.borderColor = "red";
-      }
-    });
-
-    selectedBtn.classList.add('selected');
-    nextBtn.disabled = false;
-  }
-
-  function showResults() {
-    questionContainer.classList.add('hide');
-    resultContainer.classList.remove('hide');
-
-    scoreElem.innerHTML = `<p>${studentNameInput.value}, obtuviste ${score} de ${shuffledQuestions.length} respuestas correctas.</p>`;
-    detailsElem.innerHTML = "<h3>Detalle de respuestas:</h3><ul>";
-
-    shuffledQuestions.forEach((q, i) => {
-      const status = selectedAnswers[i] ? `<span class="correct">Correcto</span>` : `<span class="incorrect">Incorrecto</span>`;
-      detailsElem.innerHTML += `<li><strong>Pregunta:</strong> ${q.question} — ${status}</li>`;
-    });
-    detailsElem.innerHTML += "</ul>";
-
-    startBtn.textContent = "Reiniciar cuestionario";
-    startBtn.disabled = false;
-    startBtn.classList.remove('hide');
-    studentNameInput.disabled = false;
-    studentNameInput.value = "";
-    nextBtn.disabled = true;
-  }
-</script>
-</body>
-</html>
-
-</body>
-</html>
