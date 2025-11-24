@@ -469,47 +469,5 @@
 
   filterCards();
 </script>
-        Array.from(answersElem.children).forEach(button => {
-      button.classList.remove('selected');
-      button.disabled = true;
-      if(button.dataset.correct === "true") {
-        button.style.borderColor = "green";
-      }
-      if(button === selectedBtn && !correct) {
-        button.style.borderColor = "red";
-      }
-    });
-
-    selectedBtn.classList.add('selected');
-    nextBtn.disabled = false;
-    nextBtn.setAttribute('aria-disabled', false);
-  }
-
-  function showResults() {
-    questionContainer.classList.add('hide');
-    resultContainer.classList.remove('hide');
-
-    scoreElem.innerHTML = `<p>${studentNameInput.value}, obtuviste ${score} de ${shuffledQuestions.length} respuestas correctas.</p>`;
-    detailsElem.innerHTML = "<h3>Detalle de respuestas:</h3><ul>";
-
-    shuffledQuestions.forEach((q, i) => {
-      const status = selectedAnswers[i] ? `<span class="correct">Correcto</span>` : `<span class="incorrect">Incorrecto</span>`;
-      detailsElem.innerHTML += `<li><strong>Pregunta:</strong> ${q.question} — ${status}</li>`;
-    });
-    detailsElem.innerHTML += "</ul>";
-
-    startBtn.textContent = "Reiniciar cuestionario";
-    startBtn.disabled = false;
-    startBtn.classList.remove('hide');
-    studentNameInput.disabled = false;
-    studentNameInput.value = "";
-    nextBtn.disabled = true;
-    nextBtn.setAttribute('aria-disabled', true);
-  }
-</script>
-
-</body>
-</html>
-
 </body>
 </html>
